@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /identity
+
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/IDENTITY_SERVICE"
+    username: root
+    password: 060802
