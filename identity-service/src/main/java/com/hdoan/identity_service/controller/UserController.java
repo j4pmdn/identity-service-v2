@@ -5,6 +5,7 @@ package com.hdoan.identity_service.controller;/*
 
 import com.hdoan.identity_service.dto.request.UserCreationRequest;
 import com.hdoan.identity_service.dto.request.UserUpdateRequest;
+import com.hdoan.identity_service.dto.response.ApiResponse;
 import com.hdoan.identity_service.entity.User;
 import com.hdoan.identity_service.service.UserService;
 import jakarta.validation.Valid;
@@ -21,8 +22,12 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    User createUser(@RequestBody @Valid UserCreationRequest request){
-        return userService.CreateUser(request);
+    ApiResponse<User> createUser(@RequestBody @Valid UserCreationRequest request){
+        ApiResponse<User> apiResponse = new ApiResponse<>();
+
+        apiResponse.setResult(userService.createUser(request));
+
+        return apiResponse;
     }
 
     @GetMapping
