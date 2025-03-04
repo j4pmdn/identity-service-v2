@@ -1,28 +1,24 @@
-package com.hdoan.identity_service.dto.request;/*
+package com.hdoan.identity_service.dto.response;/*
  * @project identity-service
  * @author Huy
  */
 
-import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserCreationRequest {
+public class UserResponse {
 
-    @Size(min = 3, message = "USERNAME_INVALID")
+    String id;
     String username;
-
-    @Size(min = 8, message = "INVALID_PASSWORD")
     String password;
     String firstName;
     String lastName;
     LocalDate dob;
-
 }
