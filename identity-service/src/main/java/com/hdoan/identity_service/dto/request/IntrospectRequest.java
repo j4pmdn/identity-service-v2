@@ -1,4 +1,4 @@
-package com.hdoan.identity_service.dto.response;/*
+package com.hdoan.identity_service.dto.request;/*
  * @project identity-service
  * @author Huy
  */
@@ -11,7 +11,6 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AuthenticationResponse {
+public class IntrospectRequest {
     String token;
-    boolean authenticated;
 }
